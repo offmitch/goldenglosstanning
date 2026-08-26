@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golden Gloss Tanning — Bespoke Airbrush &amp; Studio Glow</title>
+    <meta
+      name="description"
+      content="Golden Gloss Tanning — private studio and mobile airbrush tanning, by appointment only."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Marcellus&family=Jost:ital,wght@0,200;0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Grain / atmosphere overlay -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- ============ HEADER / NAV ============ -->
+    <header class="site-header" id="siteHeader">
+      <div class="header-inner">
+        <a href="#home" class="wordmark" data-target="home"
+          >Golden&nbsp;Gloss</a
+        >
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="primaryNav"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="primary-nav" id="primaryNav">
+          <ul>
+            <li>
+              <a href="#home" data-target="home" class="nav-link is-active"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#about" data-target="about" class="nav-link">About Me</a>
+            </li>
+            <li>
+              <a href="#clients" data-target="clients" class="nav-link"
+                >Clients</a
+              >
+            </li>
+            <li>
+              <a href="#info" data-target="info" class="nav-link">Info</a>
+            </li>
+            <li>
+              <a href="#book" data-target="book" class="nav-link nav-cta"
+                >Book a Consultation</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ============================================================ -->
+      <!-- HOME VIEW -->
+      <!-- ============================================================ -->
+      <section class="view is-active" id="view-home" data-view="home">
+        <!-- HERO -->
+        <section class="hero">
+          <div class="hero-glow" aria-hidden="true"></div>
+          <p class="eyebrow hero-eyebrow">
+            Studio &amp; Mobile Spray Tan Services in the Vancouver area
+          </p>
+          <h1 class="script hero-title">Golden Gloss</h1>
+          <a href="#book" data-target="book" class="btn btn-primary btn-glow"
+            >Book Your Glow</a
+          >
+        </section>
+
+        <!-- WELCOME -->
+        <section class="welcome band band-light">
+          <p class="eyebrow">Welcome</p>
+          <p class="welcome-copy">
+            Welcome to Golden Gloss Tanning, your premier mobile spray tan
+            service in the vibrant Vancouver area! We specialize in delivering a
+            flawless, customized tan in the comfort of your own space. Our
+            expert technicians use top-quality products to create a natural,
+            sun-kissed glow tailored to your skin tone and preferences. Enjoy
+            the convenience of our on-the-go service, ensuring you achieve a
+            beautiful tan without the hassle of leaving your home. Experience
+            radiant results and a boost of confidence with Golden Gloss Tanning,
+            where luxury meets convenience!
+          </p>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="services band band-dark" id="services">
+          <h2 class="script section-title">What I Offer</h2>
+
+          <div class="service-grid">
+            <article class="service-card">
+              <h3 class="service-name">The Glow</h3>
+              <p class="service-copy">
+                The original sexy spraytan. I will use luxurious sunless
+                solution that will be customized to your skin’s tone and shade
+                desires. Only the most natural looking tans for my babes.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <h3 class="service-name">The Hydraglow</h3>
+              <p class="service-copy">
+                This spraytan will not only be perfectly created for you but
+                will also be heavenly moisturizing and skin nourishing. This tan
+                is great for tanners who experience dry skin, eczema, psoriasis
+                and other skin sensitivities.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <h3 class="service-name">The Quickie</h3>
+              <p class="service-copy">
+                This is the rapid spraytan. This tan only takes on hour to
+                develop and is perfectly catered to you and your tanning
+                desires. You will be met with a luxurious priming spray then
+                your Golden Gloss spray.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonials band band-light" id="testimonials">
+          <p class="eyebrow">Testimonials</p>
+          <h2 class="script section-title">Kind Words</h2>
+
+          <div class="testimonial-track" id="testimonialTrack">
+            <blockquote class="testimonial">
+              <p>
+                “I’m absolutely thrilled with my tan from Golden Gloss! It’s
+                exactly what I wanted – a flawless, sun-kissed glow that looks
+                completely natural. Jules is super friendly and it is so
+                convenient she’s mobile! I wholeheartedly recommend her
+                services!”
+              </p>
+              <cite>— Larissa M.</cite>
+            </blockquote>
+            <blockquote class="testimonial">
+              <p>
+                “Jules was awesome! Super professional and friendly, she drove
+                right to my place, making it so convenient. Her precision and
+                efficiency were spot on. The golden tan she gave me is perfect
+                for these winter days, bringing back that natural summer vibe.
+                Totally recommend!”
+              </p>
+              <cite>— Tiziana B.</cite>
+            </blockquote>
+          </div>
+          <div class="testimonial-dots" id="testimonialDots"></div>
+        </section>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- ABOUT VIEW -->
+      <!-- ============================================================ -->
+      <section class="view" id="view-about" data-view="about">
+        <section class="page-hero band band-dark">
+          <p class="eyebrow eyebrow-on-dark">The Artist</p>
+          <h1 class="script page-title">About&nbsp;Me</h1>
+        </section>
+
+        <section class="about-body band band-light">
+          <div class="about-grid">
+            <div class="about-portrait" aria-hidden="true">
+              <div class="portrait-frame">
+                <span class="monogram">GG</span>
+              </div>
+            </div>
+            <div class="about-copy">
+              <p class="about-lead">
+                Golden Gloss Tanning is a studio of one — built on the belief
+                that a tan is a finishing detail, not a commodity.
+              </p>
+              <p>
+                I trained across airbrush artistry and colour theory before
+                opening a private studio built around a simple rule: every
+                solution is mixed by hand, on the day, for the person sitting in
+                the chair. No pre‑set shades, no rushed fifteen‑minute booths.
+              </p>
+              <p>
+                Every appointment is one‑on‑one, unhurried, and finished the way
+                I'd want my own glow to look — deep, warm, and completely
+                undetectable as anything but sun.
+              </p>
+              <ul class="about-facts">
+                <li><span>Est.</span> Private studio, appointment‑only</li>
+                <li>
+                  <span>Solutions</span> Custom‑mixed, DHA‑balanced, vegan
+                </li>
+                <li><span>Focus</span> Bridal, event &amp; maintenance glow</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- CLIENTS VIEW (gallery only) -->
+      <!-- ============================================================ -->
+      <section class="view" id="view-clients" data-view="clients">
+        <section class="page-hero band band-dark">
+          <p class="eyebrow eyebrow-on-dark">The Look Book</p>
+          <h1 class="script page-title">Clients</h1>
+        </section>
+
+        <section class="gallery-wrap band band-dark">
+          <div class="gallery" id="gallery">
+            <!-- Replace each .gallery-item's <img src> with real client photos (with permission). -->
+            <button class="gallery-item" data-index="0" style="--tile-tone: 1">
+              <img
+                src="https://picsum.photos/seed/gg-glow-01/700/900"
+                alt="Golden Gloss client, studio glow result"
+                loading="lazy"
+              /><span class="gallery-num">01</span>
+            </button>
+            <button class="gallery-item" data-index="1" style="--tile-tone: 2">
+              <img
+                src="https://picsum.photos/seed/gg-glow-02/700/900"
+                alt="Golden Gloss client, studio glow result"
+                loading="lazy"
+              /><span class="gallery-num">02</span>
+            </button>
+            <button class="gallery-item" data-index="2" style="--tile-tone: 3">
+              <img
+                src="https://picsum.photos/seed/gg-glow-03/700/900"
+                alt="Golden Gloss client, studio glow result"
+                loading="lazy"
+              /><span class="gallery-num">03</span>
+            </button>
+            <button class="gallery-item" data-index="3" style="--tile-tone: 4">
+              <img
+                src="https://picsum.photos/seed/gg-glow-04/700/900"
+                alt="Golden Gloss client, studio glow result"
+                loading="lazy"
+              /><span class="gallery-num">04</span>
+            </button>
+            <button class="gallery-item" data-index="4" style="--tile-tone: 1">
+              <img
+                src="https://picsum.photos/seed/gg-glow-05/700/900"
+                alt="Golden Gloss client, studio glow result"
+                loading="lazy"
+              /><span class="gallery-num">05</span>
+            </button>
+            <button class="gallery-item" data-index="5" style="--tile-tone: 2">
+              <img
+                src="https://picsum.photos/seed/gg-glow-06/700/900"
+                alt="Golden Gloss client, studio glow result"
+                loading="lazy"
+              /><span class="gallery-num">06</span>
+            </button>
+            <button class="gallery-item" data-index="6" style="--tile-tone: 3">
+              <img
+                src="https://picsum.photos/seed/gg-glow-07/700/900"
+                alt="Golden Gloss client, studio glow result"
+                loading="lazy"
+              /><span class="gallery-num">07</span>
+            </button>
+            <button class="gallery-item" data-index="7" style="--tile-tone: 4">
+              <img
+                src="https://picsum.photos/seed/gg-glow-08/700/900"
+                alt="Golden Gloss client, studio glow result"
+                loading="lazy"
+              /><span class="gallery-num">08</span>
+            </button>
+            <button class="gallery-item" data-index="8" style="--tile-tone: 1">
+              <img
+                src="https://picsum.photos/seed/gg-glow-09/700/900"
+                alt="Golden Gloss client, studio glow result"
+                loading="lazy"
+              /><span class="gallery-num">09</span>
+            </button>
+          </div>
+        </section>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- INFO VIEW -->
+      <!-- ============================================================ -->
+      <section class="view" id="view-info" data-view="info">
+        <section class="page-hero band band-dark">
+          <p class="eyebrow eyebrow-on-dark">Preparation</p>
+          <h1 class="script page-title">Info</h1>
+        </section>
+
+        <section class="care band band-light">
+          <div class="care-grid">
+            <div class="care-col">
+              <h2 class="script care-title">Before Care</h2>
+              <ul class="care-list">
+                <li>
+                  Exfoliate your skin before your appointment to remove any dead
+                  skin or other impurities.
+                </li>
+                <li>
+                  Hydrated skin will achieve the best, most flawless glow.
+                </li>
+                <li>
+                  Do any shaving the day before. If you’re waxing or using laser
+                  hair removal, do this 2-3 days before your tan.
+                </li>
+                <li>
+                  1 hour before your tan, rise very well, using a wet loofah
+                  with no product, and scrubbing like never before. Pat dry and
+                  ensure there are no products on your skin.
+                </li>
+                <li>Make sure you’re all natural to ensure an even glow.</li>
+                <li>
+                  Wear loose clothing to ensure you don’t smudge or streak your
+                  tan when you’re getting dressed.
+                </li>
+              </ul>
+            </div>
+            <div class="care-divider" aria-hidden="true"></div>
+            <div class="care-col">
+              <h2 class="script care-title">After Care</h2>
+              <ul class="care-list">
+                <li>
+                  Avoid Sweating and activities that will cause you to sweat in
+                  the first 12 hours.
+                </li>
+                <li>
+                  After your appointment wait the recommended time, and wear
+                  loose clothing and remain dry.
+                </li>
+                <li>
+                  For your first rinse, shower with cool water, no soap or any
+                  other products should be used.
+                </li>
+                <li>Moisturize every day using a sulphate free moisturizer.</li>
+                <li>
+                  Avoid pools, hot tubs and long hot showers to keep colour
+                  even.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="faq band band-dark" id="faq">
+          <p class="eyebrow eyebrow-on-dark">Questions</p>
+          <h2 class="script section-title">Frequently Asked</h2>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>How long does the glow last?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  The longevity of a spray tan varies from person to person. On
+                  average, it lasts about 5 to 10 days. Factors like skin type,
+                  preparation, aftercare, and the quality of the spray tan
+                  solution can influence its duration.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>How do I prepare for a spray tan? </span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  To prepare for a spray tan, exfoliate your skin to remove dead
+                  cells, shave or wax 24 hours before the session, and avoid
+                  using moisturizers, deodorants, or perfumes on the day of the
+                  spray tan. Wear loose, dark clothing to prevent rubbing off
+                  the tan.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>What if I have eczema or psoriasis?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Ensure that 2 days before your spray tan you discontinue the
+                  use of any topical cream you are using for treatment, as it
+                  may affect the development of your spray tan and let me know
+                  your affected areas. As well as a highly recommend having the
+                  HydraGlow service as the formula is designed for sensitive
+                  skin and has the correct ingredients to ensure no irritation.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>How often should I get a spray tan? </span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  The frequency of spray tans depends on personal preference.
+                  Many people choose to get a spray tan every 1-2 weeks to
+                  maintain a consistent tan. However, factors such as skin type,
+                  lifestyle, and desired tan intensity can influence how often
+                  one chooses to spray tan.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- BOOK VIEW -->
+      <!-- ============================================================ -->
+  <section class="view" id="view-book" data-view="book">
+    <section class="page-hero band band-dark">
+      <p class="eyebrow eyebrow-on-dark">Reserve Your Session</p>
+      <h1 class="script page-title">Book a Consultation</h1>
+    </section>
+ 
+    <section class="book-wrap band band-light">
+      <form class="book-form" id="bookForm" novalidate>
+ 
+        <div class="field">
+          <label for="fullName">Name</label>
+          <input type="text" id="fullName" name="fullName" autocomplete="name" required>
+          <span class="field-error" id="err-fullName">Please enter your name.</span>
+        </div>
+ 
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+          <span class="field-error" id="err-email">Please enter a valid email address.</span>
+        </div>
+ 
+        <div class="field">
+          <span class="field-label-static">Appointment Type</span>
+          <div class="radio-row">
+            <label class="radio-pill">
+              <input type="radio" name="apptType" value="Mobile" required>
+              <span>Mobile</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="apptType" value="In-Studio" required>
+              <span>In‑Studio</span>
+            </label>
+          </div>
+          <span class="field-error" id="err-apptType">Please choose mobile or in‑studio.</span>
+        </div>
+ 
+        <div class="field address-field" id="addressField">
+          <div class="address-field-inner">
+            <label for="address">Your Address</label>
+            <input type="text" id="address" name="address" autocomplete="street-address" placeholder="Street, city, postal code">
+            <span class="field-error" id="err-address">Please enter your address.</span>
+          </div>
+        </div>
+ 
+        <div class="field-row">
+          <div class="field">
+            <label for="prefDate">Preferred Date</label>
+            <input type="date" id="prefDate" name="prefDate" required>
+            <span class="field-error" id="err-prefDate">Please choose a date.</span>
+          </div>
+          <div class="field">
+            <label for="prefTime">Preferred Time</label>
+            <input type="time" id="prefTime" name="prefTime" required>
+            <span class="field-error" id="err-prefTime">Please choose a time.</span>
+          </div>
+        </div>
+ 
+        <div class="field">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Skin tone, allergies, anything else I should know…"></textarea>
+        </div>
+ 
+        <button type="submit" class="btn btn-primary btn-glow btn-wide">Request Consultation</button>
+ 
+      </form>
+ 
+      <div class="book-success" id="bookSuccess" hidden>
+        <p class="script success-title">Thank You</p>
+        <p>Your request has been received. I'll reply personally within one business day to confirm your appointment.</p>
+        <button class="btn btn-outline" id="bookAnother">Send Another Request</button>
+      </div>
+    </section>
+  </section>
+ 
+</main>
+
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <p class="script footer-word">Golden Gloss</p>
+      <p class="footer-fine">
+        By appointment only · Studio &amp; Mobile · &copy;
+        <span id="year"></span> Golden Gloss Tanning
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
