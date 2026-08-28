@@ -4,7 +4,7 @@
   /* ---------------------------------------------------------------------
      Utilities
   --------------------------------------------------------------------- */
-  const $  = (sel, ctx = document) => ctx.querySelector(sel);
+  const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
   /* ---------------------------------------------------------------------
@@ -12,6 +12,25 @@
   --------------------------------------------------------------------- */
   const yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  const startYear = 2019;
+  const currentYear = new Date().getFullYear();
+  const yearsExperience = currentYear - startYear;
+  const numberWords = [
+    "zero",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten",
+  ];
+  document.getElementById("yearsExperience").textContent =
+    numberWords[yearsExperience];
 
   /* ---------------------------------------------------------------------
      Header: blur + shadow once the page has scrolled
@@ -32,19 +51,23 @@
   function closeMenu() {
     menuToggle.classList.remove("is-open");
     primaryNav.classList.remove("is-open");
+    header.classList.remove("is-menu-open");
     menuToggle.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
   }
   function toggleMenu() {
     const open = primaryNav.classList.toggle("is-open");
     menuToggle.classList.toggle("is-open", open);
+    header.classList.toggle("is-menu-open", open);
     menuToggle.setAttribute("aria-expanded", String(open));
+    document.body.style.overflow = open ? "hidden" : "";
   }
   menuToggle.addEventListener("click", toggleMenu);
 
   /* ---------------------------------------------------------------------
      SPA-style view routing (Home / About / Clients / Info / Book)
   --------------------------------------------------------------------- */
-  const views    = $$(".view");
+  const views = $$(".view");
   const navLinks = $$(".nav-link");
 
   function showView(name, { scroll = true } = {}) {
@@ -55,11 +78,20 @@
       if (active) matched = true;
     });
     if (!matched) {
-      views.forEach((v) => v.classList.toggle("is-active", v.dataset.view === "home"));
+      views.forEach((v) =>
+        v.classList.toggle("is-active", v.dataset.view === "home"),
+      );
       name = "home";
     }
-    navLinks.forEach((l) => l.classList.toggle("is-active", l.dataset.target === name));
-    if (scroll) window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
+    navLinks.forEach((l) =>
+      l.classList.toggle("is-active", l.dataset.target === name),
+    );
+    header.classList.toggle("is-on-hero", name === "home");
+    if (scroll)
+      window.scrollTo({
+        top: 0,
+        behavior: "instant" in window ? "instant" : "auto",
+      });
     closeMenu();
   }
 
@@ -97,8 +129,12 @@
 
     function setTestimonial(i) {
       tIndex = (i + testimonials.length) % testimonials.length;
-      testimonials.forEach((t, idx) => t.classList.toggle("is-active", idx === tIndex));
-      Array.from(dotsWrap.children).forEach((d, idx) => d.classList.toggle("is-active", idx === tIndex));
+      testimonials.forEach((t, idx) =>
+        t.classList.toggle("is-active", idx === tIndex),
+      );
+      Array.from(dotsWrap.children).forEach((d, idx) =>
+        d.classList.toggle("is-active", idx === tIndex),
+      );
       restartAutoplay();
     }
 
@@ -111,8 +147,10 @@
 
     const prevBtn = $("#testimonialPrev");
     const nextBtn = $("#testimonialNext");
-    if (prevBtn) prevBtn.addEventListener("click", () => setTestimonial(tIndex - 1));
-    if (nextBtn) nextBtn.addEventListener("click", () => setTestimonial(tIndex + 1));
+    if (prevBtn)
+      prevBtn.addEventListener("click", () => setTestimonial(tIndex - 1));
+    if (nextBtn)
+      nextBtn.addEventListener("click", () => setTestimonial(tIndex + 1));
   }
 
   /* ---------------------------------------------------------------------
@@ -136,11 +174,10 @@
     });
   });
 
-
   /* ---------------------------------------------------------------------
      Consultation form — client-side validation + confirmation state
   --------------------------------------------------------------------- */
-  const form    = $("#bookForm");
+  const form = $("#bookForm");
   const success = $("#bookSuccess");
 
   const prefDateInput = $("#prefDate");
@@ -151,7 +188,8 @@
   const apptRadios = $$('input[name="apptType"]');
 
   function syncAddressField() {
-    const isMobile = form.querySelector('input[name="apptType"]:checked')?.value === "Mobile";
+    const isMobile =
+      form.querySelector('input[name="apptType"]:checked')?.value === "Mobile";
     addressField.classList.toggle("is-open", isMobile);
     if (!isMobile) {
       addressField.closest(".field")?.classList.remove("has-error");
@@ -173,18 +211,20 @@
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      const nameField  = $("#fullName").closest(".field");
+      const nameField = $("#fullName").closest(".field");
       const emailField = $("#email").closest(".field");
-      const apptField  = $('input[name="apptType"]').closest(".field");
-      const dateField  = $("#prefDate").closest(".field");
-      const timeField  = $("#prefTime").closest(".field");
+      const apptField = $('input[name="apptType"]').closest(".field");
+      const dateField = $("#prefDate").closest(".field");
+      const timeField = $("#prefTime").closest(".field");
 
-      const nameOK  = $("#fullName").value.trim().length > 1;
+      const nameOK = $("#fullName").value.trim().length > 1;
       const emailOK = isValidEmail($("#email").value.trim());
-      const apptOK  = !!form.querySelector('input[name="apptType"]:checked');
-      const dateOK  = $("#prefDate").value.trim().length > 0;
-      const timeOK  = $("#prefTime").value.trim().length > 0;
-      const isMobile  = apptOK && form.querySelector('input[name="apptType"]:checked').value === "Mobile";
+      const apptOK = !!form.querySelector('input[name="apptType"]:checked');
+      const dateOK = $("#prefDate").value.trim().length > 0;
+      const timeOK = $("#prefTime").value.trim().length > 0;
+      const isMobile =
+        apptOK &&
+        form.querySelector('input[name="apptType"]:checked').value === "Mobile";
       const addressOK = !isMobile || addressInput.value.trim().length > 3;
 
       setError(nameField, !nameOK);
@@ -196,7 +236,8 @@
 
       if (!nameOK || !emailOK || !apptOK || !dateOK || !timeOK || !addressOK) {
         const firstInvalid = form.querySelector(".has-error input, .has-error");
-        if (firstInvalid) firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+        if (firstInvalid)
+          firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
         return;
       }
 

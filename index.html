@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Golden Gloss Tanning — Bespoke Airbrush &amp; Studio Glow</title>
+    <title>Golden Gloss Tanning</title>
     <meta
       name="description"
       content="Golden Gloss Tanning — private studio and mobile airbrush tanning, by appointment only."
@@ -15,6 +15,10 @@
       href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Marcellus&family=Jost:ital,wght@0,200;0,300;0,400;0,500;1,300&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
 
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -25,9 +29,9 @@
     <!-- ============ HEADER / NAV ============ -->
     <header class="site-header" id="siteHeader">
       <div class="header-inner">
-        <a href="#home" class="wordmark" data-target="home"
-          >Golden&nbsp;Gloss</a
-        >
+        <a href="#home" class="logo" data-target="home">
+          <img src="/images/logo.png" alt="Golden Gloss Tanning logo" />
+        </a>
 
         <button
           class="menu-toggle"
@@ -55,7 +59,7 @@
               >
             </li>
             <li>
-              <a href="#info" data-target="info" class="nav-link">Info</a>
+              <a href="#info" data-target="info" class="nav-link">Care + FAQ</a>
             </li>
             <li>
               <a href="#book" data-target="book" class="nav-link nav-cta"
@@ -78,7 +82,11 @@
           <p class="eyebrow hero-eyebrow">
             Studio &amp; Mobile Spray Tan Services in the Vancouver area
           </p>
-          <h1 class="script hero-title">Golden Gloss</h1>
+          <div class="logo">
+            <img src="/images/logo.png" alt="Golden Gloss Tanning logo" />
+          </div>
+          <h1 class="hero-title">Golden Gloss</h1>
+          <br />
           <a href="#book" data-target="book" class="btn btn-primary btn-glow"
             >Book Your Glow</a
           >
@@ -102,37 +110,51 @@
 
         <!-- SERVICES -->
         <section class="services band band-dark" id="services">
-          <h2 class="script section-title">What I Offer</h2>
+          <h2 class="script section-title">Services</h2>
 
           <div class="service-grid">
             <article class="service-card">
               <h3 class="service-name">The Glow</h3>
               <p class="service-copy">
-                The original sexy spraytan. I will use luxurious sunless
-                solution that will be customized to your skin’s tone and shade
-                desires. Only the most natural looking tans for my babes.
+                The Glow is our original natural sexy SprayTan. This tan is an 8
+                hour development, that it is custom to your skin tone and
+                tanning goals.
               </p>
             </article>
 
             <article class="service-card">
               <h3 class="service-name">The Hydraglow</h3>
               <p class="service-copy">
-                This spraytan will not only be perfectly created for you but
-                will also be heavenly moisturizing and skin nourishing. This tan
-                is great for tanners who experience dry skin, eczema, psoriasis
-                and other skin sensitivities.
+                Transport your skin to glowy, dewy and hydrated. This tan is a
+                nourishing treatment that is great for clients who experience
+                skin sensitivities.
               </p>
             </article>
 
             <article class="service-card">
               <h3 class="service-name">The Quickie</h3>
               <p class="service-copy">
-                This is the rapid spraytan. This tan only takes on hour to
-                develop and is perfectly catered to you and your tanning
-                desires. You will be met with a luxurious priming spray then
-                your Golden Gloss spray.
+                This tan is a 1-4 hour development tan. This solution Is our
+                premium sunkissed tan. I use a custom mix designed just for you
+                and this tan can also be in our darkest shade!
               </p>
             </article>
+            <article class="service-card">
+              <h3 class="service-name">The Unstoppable Glow</h3>
+              <p class="service-copy">
+                The one and only sweat proof, Pilates proof, heat proof tan
+                you'll find. Lasts up to 3 weeks and custom mixed, just how you
+                like it ...
+              </p>
+            </article>
+          </div>
+          <div class="service-note">
+            <p>
+              <strong>Please note:</strong> All spray tans require a choice
+              between our <strong>Clear</strong> or
+              <strong>Wrap</strong> solutions. Please select your preferred
+              option when booking.
+            </p>
           </div>
         </section>
 
@@ -180,7 +202,10 @@
           <div class="about-grid">
             <div class="about-portrait" aria-hidden="true">
               <div class="portrait-frame">
-                <span class="monogram">GG</span>
+                <img
+                  src="/images/about-me.jpg"
+                  alt="Juliana Middleton, owner of Golden Gloss Tanning"
+                />
               </div>
             </div>
             <div class="about-copy">
@@ -191,11 +216,12 @@
                 things beauty and body positivity.
               </p>
               <p>
-                With over four years of dedicated experience in the tanning
-                industry, I have honed my craft to provide you with the perfect
-                golden glow that complements your natural beauty. I understand
-                the transformative power of a flawless tan, and I am here to
-                make you feel confident and empowered in your own skin.
+                With over <span id="yearsExperience"></span> years of dedicated
+                experience in the tanning industry, I have honed my craft to
+                provide you with the perfect golden glow that complements your
+                natural beauty. I understand the transformative power of a
+                flawless tan, and I am here to make you feel confident and
+                empowered in your own skin.
               </p>
               <p>
                 In addition to my expertise in spray tanning, I have graduated
@@ -204,46 +230,22 @@
                 experience in the beauty industry and academic knowledge in
                 marketing allows me to offer you a service that not only
                 enhances your physical appearance but also aligns with the
-                latest trends and techniques. 
-                </p>
-                <p>Passion drives everything I do,
-                and the beauty industry has captured my heart. I believe that
-                everyone deserves to feel beautiful and confident, regardless of
-                shape, size, or skin tone. My commitment to body positivity
-                extends beyond the tanning booth, and I strive to create a space
-                where you feel valued and celebrated for your uniqueness.
+                latest trends and techniques.
               </p>
               <p>
-                What sets Golden Gloss Tanning apart is not only the flawless,
-                natural-looking results but the elevated experience that comes
-                with every appointment. From the moment you arrive, you’ll be
-                treated to a personalized, relaxing service designed to make you
-                feel confident, comfortable, and radiant. 
-                </p>
-                <p>At Golden Gloss
-                Tanning, I use only top-of-the-line, professional-grade skincare
-                and spray tan solutions formulated with nourishing ingredients
-                to enhance and protect your skin. These luxury solutions are
-                infused with hydrating botanicals, antioxidants, and natural
-                extracts—ensuring a long-lasting, even glow that fades
-                beautifully and feels as good as it looks. 
-                </p>
-                <p>
-                I take pride in
-                offering a bespoke experience tailored to your unique skin tone
-                and preferences, using products trusted by leading tanning
-                professionals for their superior quality, consistency, and
-                skin-loving benefits. Your satisfaction and confidence are
-                always my top priorities, and every session is crafted to leave
-                you glowing—inside and out. 
-                </p>
-                <p>
-                Thank you for choosing Golden Gloss
-                Tanning for your spray tan needs. I look forward to the
-                opportunity to enhance your natural beauty, boost your
-                confidence, and share the joy of body positivity with you. Let's
-                embark on this journey together, and embrace the glow that comes
-                from both within and without!
+                At Golden Gloss Tanning, I use only top-of-the-line,
+                professional-grade skincare and spray tan solutions formulated
+                with nourishing ingredients to enhance and protect your skin.
+                These luxury solutions are infused with hydrating botanicals,
+                antioxidants, and natural extracts—ensuring a long-lasting, even
+                glow that fades beautifully and feels as good as it looks.
+              </p>
+              <p>
+                Thank you for choosing Golden Gloss Tanning for your spray tan
+                needs. I look forward to the opportunity to enhance your natural
+                beauty, boost your confidence, and share the joy of body
+                positivity with you. Let's embark on this journey together, and
+                embrace the glow that comes from both within and without!
               </p>
             </div>
           </div>
@@ -334,8 +336,7 @@
       <!-- ============================================================ -->
       <section class="view" id="view-info" data-view="info">
         <section class="page-hero band band-dark">
-          <p class="eyebrow eyebrow-on-dark">Preparation</p>
-          <h1 class="script page-title">Info</h1>
+          <h1 class="script page-title">Care</h1>
         </section>
 
         <section class="care band band-light">
@@ -393,7 +394,6 @@
         </section>
 
         <section class="faq band band-dark" id="faq">
-          <p class="eyebrow eyebrow-on-dark">Questions</p>
           <h2 class="script section-title">Frequently Asked</h2>
 
           <div class="faq-list">
@@ -586,9 +586,27 @@
 
     <!-- ============ FOOTER ============ -->
     <footer class="site-footer">
-      <p class="script footer-word">Golden Gloss</p>
+      <img
+        src="/images/logo.png"
+        class="logo"
+        alt="Golden Gloss Tanning logo"
+      />
       <p class="footer-fine">
-        By appointment only · Studio &amp; Mobile · &copy;
+        <a
+          href="https://www.instagram.com/goldenglosstanning/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Golden Gloss Tanning on Instagram"
+        >
+          <i class="fa-brands fa-instagram"></i> Instagram
+        </a>
+        <span class="footer-divider">•</span>
+        <a href="tel:7788610535">(778) 861-0535</a>
+        <span class="footer-divider">•</span>
+        <a href="mailto:goldenglosstanning@yahoo.com">
+          goldenglosstanning@yahoo.com
+        </a>
+        <span class="footer-divider">•</span> &copy;
         <span id="year"></span> Golden Gloss Tanning
       </p>
     </footer>
