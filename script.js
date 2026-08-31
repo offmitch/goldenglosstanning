@@ -207,52 +207,95 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   }
 
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-      const nameField = $("#fullName").closest(".field");
-      const emailField = $("#email").closest(".field");
-      const apptField = $('input[name="apptType"]').closest(".field");
-      const dateField = $("#prefDate").closest(".field");
-      const timeField = $("#prefTime").closest(".field");
+    const nameField = $("#fullName").closest(".field");
+    const emailField = $("#email").closest(".field");
+    const apptField = $('input[name="apptType"]').closest(".field");
+    const dateField = $("#prefDate").closest(".field");
+    const timeField = $("#prefTime").closest(".field");
+    const addressField = $("#address").closest(".field");
+    const serviceField = $('input[name="service"]').closest(".field");
 
-      const nameOK = $("#fullName").value.trim().length > 1;
-      const emailOK = isValidEmail($("#email").value.trim());
-      const apptOK = !!form.querySelector('input[name="apptType"]:checked');
-      const dateOK = $("#prefDate").value.trim().length > 0;
-      const timeOK = $("#prefTime").value.trim().length > 0;
-      const isMobile =
-        apptOK &&
-        form.querySelector('input[name="apptType"]:checked').value === "Mobile";
-      const addressOK = !isMobile || addressInput.value.trim().length > 3;
+    const nameOK = $("#fullName").value.trim().length > 1;
+    const emailOK = isValidEmail($("#email").value.trim());
+    const apptOK = !!form.querySelector('input[name="apptType"]:checked');
+    const dateOK = $("#prefDate").value.trim().length > 0;
+    const timeOK = $("#prefTime").value.trim().length > 0;
 
-      setError(nameField, !nameOK);
-      setError(emailField, !emailOK);
-      setError(apptField, !apptOK);
-      setError(dateField, !dateOK);
-      setError(timeField, !timeOK);
-      setError(addressField, !addressOK);
+    const isMobile =
+      apptOK &&
+      form.querySelector('input[name="apptType"]:checked').value === "Mobile";
 
-      if (!nameOK || !emailOK || !apptOK || !dateOK || !timeOK || !addressOK) {
-        const firstInvalid = form.querySelector(".has-error input, .has-error");
-        if (firstInvalid)
-          firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
-        return;
+    const addressOK =
+      !isMobile || $("#address").value.trim().length > 3;
+
+    const serviceOK = form.querySelector('input[name="service"]:checked')?.value.trim().length > 0;
+
+    setError(nameField, !nameOK);
+    setError(emailField, !emailOK);
+    setError(apptField, !apptOK);
+    setError(dateField, !dateOK);
+    setError(timeField, !timeOK);
+    setError(addressField, !addressOK);
+    setError(serviceField, !serviceOK);
+
+    if (
+      !nameOK ||
+      !emailOK ||
+      !apptOK ||
+      !dateOK ||
+      !timeOK ||
+      !addressOK ||
+      !serviceOK
+    ) {
+      const firstInvalid = form.querySelector(".has-error input, .has-error");
+
+      if (firstInvalid) {
+        firstInvalid.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
       }
 
-      // No backend is wired up — this simply confirms receipt in the UI.
-      // Replace this block with a real submission (fetch/EmailJS/Formspree/etc).
-      form.hidden = true;
-      success.hidden = false;
+      return;
+    }
+
+    emailjs
+      .send("service_tr5ns3r", "template_3barvfo", {
+        name: $("#fullName").value.trim(),
+        email: $("#email").value.trim(),
+        apptType: form.querySelector('input[name="apptType"]:checked').value,
+        prefDate: $("#prefDate").value.trim(),
+        prefTime: $("#prefTime").value.trim(),
+        address: $("#address").value.trim(),
+        service: form.querySelector('input[name="service"]:checked')?.value.trim(),
+        notes: $("#notes").value.trim()
+      })
+      .then(() => {
+        form.hidden = true;
+        success.hidden = false;
+      })
+      .catch((error) => {
+        console.error("Email failed:", error);
+        alert("Sorry, there was a problem sending your request. Please try again.");
+      });
+  });
+
+  $("#bookAnother").addEventListener("click", () => {
+    form.reset();
+
+    $$(".field", form).forEach((f) => {
+      f.classList.remove("has-error");
     });
 
-    $("#bookAnother").addEventListener("click", () => {
-      form.reset();
-      $$(".field", form).forEach((f) => f.classList.remove("has-error"));
-      syncAddressField();
-      success.hidden = true;
-      form.hidden = false;
-    });
-  }
+    syncAddressField();
+
+    success.hidden = true;
+    form.hidden = false;
+  });
+}
+
 })();

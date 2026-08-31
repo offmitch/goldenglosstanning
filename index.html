@@ -22,6 +22,14 @@
 
     <link rel="stylesheet" href="styles.css" />
   </head>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script>
+    (function () {
+      emailjs.init("kRXjNB-yo0Ys5OyDP");
+    })();
+  </script>
+
   <body>
     <!-- Grain / atmosphere overlay -->
     <div class="grain" aria-hidden="true"></div>
@@ -537,6 +545,46 @@
               </div>
             </div>
 
+            <div class="field">
+              <span class="field-label-static">Service</span>
+              <div class="radio-row">
+                <label class="radio-pill">
+                  <input type="radio" name="service" value="The Glow" required />
+                  <span>The Glow</span>
+                </label>
+                <label class="radio-pill">
+                  <input
+                    type="radio"
+                    name="service"
+                    value="The Hydraglow"
+                    required
+                  />
+                  <span>The Hydraglow</span>
+                </label>
+                <label class="radio-pill">
+                  <input
+                    type="radio"
+                    name="service"
+                    value="The Quickie"
+                    required
+                  />
+                  <span>The Quickie</span>
+                </label>
+                <label class="radio-pill">
+                  <input
+                    type="radio"
+                    name="service"
+                    value="The Unstoppable Glow"
+                    required
+                  />
+                  <span>The Unstoppable Glow</span>
+                </label>
+              </div>
+              <span class="field-error" id="err-service "
+                >Please choose a service .</span
+              >
+            </div>
+
             <div class="field-row">
               <div class="field">
                 <label for="prefDate">Preferred Date</label>
@@ -572,8 +620,8 @@
           <div class="book-success" id="bookSuccess" hidden>
             <p class="script success-title">Thank You</p>
             <p>
-              Your request has been received. I'll reply personally within one
-              business day to confirm your appointment.
+              Your request has been received. I'll reply personally to confirm
+              your appointment.
             </p>
             <button class="btn btn-outline" id="bookAnother">
               Send Another Request
